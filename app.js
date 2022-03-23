@@ -1,7 +1,7 @@
-document.addEventListener("DOMContentLoaded", (e) => {
-    console.log(e);
+document.addEventListener("DOMContentLoaded", () => {
     createCards();
   });
+
 
 const createCards = () =>  {
 
@@ -26,33 +26,31 @@ const createCards = () =>  {
     console.log(cardtable)
 
     // Affichage des cartes
-    cardtable.forEach((card) => {
+    cardtable.forEach((item) => {
         let gridArea = document.querySelector("main");
-        let cardDiv = document.createElement("div");
-        cardDiv.classList = "card";
-        gridArea.appendChild(cardDiv);
+        let card = document.createElement("div");
+        card.classList = "card";
+        card.id = item.id;
+        gridArea.appendChild(card);
 
         // Création de la face de la carte
         let front = document.createElement("img");
         front.classList = "card-front";
-        front.src = card.srcImg;
-        cardDiv.appendChild(front);
+        front.src = item.srcImg;
+        card.appendChild(front);
         
-        // Création de la face de la carte
+        // Création du derrière de la carte
         let back = document.createElement("div");
         back.classList = "card-back";
-        cardDiv.appendChild(back);
+        card.appendChild(back);
 
-
-
-
-
-
-
-
-
+        card.addEventListener("click", () => {
+            back.classList.toggle("clickedCard");
+            card.classList.toggle("clickedCard");
+        })
 
     });
+
 
 
 };
