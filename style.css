@@ -9,6 +9,7 @@ body {
   background: linear-gradient(to right, #b993d6, #8ca6db); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 
@@ -55,6 +56,22 @@ main{
   color: white;
 }
 
-.clickedCard {
+.clickedCard .clickedCardBack{
   transform: rotateY(180deg);
+}
+
+
+p{
+  display: none;
+  position: absolute;
+  width: 800px;
+  height:65px;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 50px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgb(90, 226, 0);
 }
