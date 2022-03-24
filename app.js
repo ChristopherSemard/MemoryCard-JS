@@ -39,7 +39,7 @@ const createCards = () =>  {
     ]
 
     // Random des cartes
-    // cardtable.sort((a, b) => 0.5 - Math.random());
+    cardtable.sort((a, b) => 0.5 - Math.random());
 
     // Affichage des cartes
     cardtable.forEach((item) => {
